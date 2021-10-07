@@ -24,7 +24,7 @@ if nargin < 1
     run_number = 1;
     RTbox_connected = 0;
     iti_length = 1;
-    break_frequency = 2; 
+    break_frequency = 0; 
     
     %% open window
     commandwindow;
