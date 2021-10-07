@@ -201,7 +201,8 @@ for itrial = 1:n_trials
     end
     
     %% Experiment break
-    if rem(itrial, round(n_trials/break_frequency)) == 0
+    if break_frequency 
+        if rem(itrial, round(n_trials/break_frequency)) == 0
         if RTbox_connected
             RTBox('clear',20); %Clear button box
             bpts = [];
@@ -222,6 +223,7 @@ for itrial = 1:n_trials
         end
         
         save(fullfile(matout,['run', sprintf('%03d', run_number) '_',curr_date,'.mat']))
+        end 
     end 
 end
 
