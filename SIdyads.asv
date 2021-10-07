@@ -51,7 +51,7 @@ topout = fullfile(curr, 'data', ['sub',sprintf('%02d', subj_number)]);
 matout = fullfile(topout, 'matfiles');
 if ~exist(matout, 'dir'); mkdir(matout); end 
 timingout = fullfile(topout, 'timingfiles');
-if ~exist(timingout, 'dir'); mkdir(timingout); end 
+if ~exist(matout, 'dir'); mkdir(matout; end 
 
 s=sprintf('Subject number is %g. Run number is %g. ', subj_number, run_number);
 fprintf('\n%s\n\n ',WrapString(s));
