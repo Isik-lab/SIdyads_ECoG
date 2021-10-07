@@ -18,7 +18,7 @@ n_repeats = 4; %How many times to loop through the full set of stimuli
 break_frequency = 2; %There are 275 videos to a run. This value determines
 %how frequently to break up those movies. A value of 2 would lead a
 %break every ~138 videos (275/2).
-iti_length = 0.75; %time between stimuli in seconds
+iti_length = 1; %time between stimuli in seconds
 threshold = 60; %accuracy threshold for practice to continue.
 %There are five trials, so 80% is missing one trial
 stimulus_size = 1000; %The size of the movie to display in pixels.
