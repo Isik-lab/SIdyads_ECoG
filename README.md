@@ -1,2 +1,13 @@
 # SIdyads_ECoG
  
+## `SIdyads_loopit.m`
+This is primarily a wrapping and looping function that calls the practice (if enabled) and the main experiment. No inputs are required, but if none are set, the `subj_number` is set to 77, there will be practice, and no responses will be recorded by default.
+
+## `SIdyads_practice.m`
+This calls the practice code. Random videos are selected to be presented. The participant must reach the input threshold accuracy to be able to progress. 
+
+## `SIdyads.m`
+This is the main experiment that presents the stimuli. Breaks are enabled between the long presentation of videos with a frequency determined by the `break_frequency` input parameter. If `RTbox_connected` is set to 1, the code will attempt to connect both to the RTBox and DAQ. 
+
+## social_dyad_videos_500ms/
+To run the experiment, the "social_dyad_videos_500ms/" directory must be added to the main folder. The directory can be downloaded from this [Google Drive link]  (https://drive.google.com/drive/folders/1-EGqd_Yp0yKg5ooeS0ujAVnPmdAlXAsC?usp=sharing).

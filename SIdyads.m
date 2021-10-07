@@ -10,7 +10,7 @@ function total_accuracy = SIdyads(subj_number, run_number, win, dispSize, break_
 % There are 275 videos to a run. A value of 2, for example, would lead to a
 % break every ~138 videos (275/2).
 % iti_length - the amount of time between stimuli in seconds
-% RTbox_connected - boolean indicating whether the check for responses
+% RTbox_connected - boolean indicating whether to check for responses
 %
 % Outputs:
 % The total accuracy for the current run
@@ -187,6 +187,10 @@ for itrial = 1:n_trials
         if movie(itrial+1) > 0; still_loading = 0; end
     end
     
+    iti_end = T.onset_time(itrial) + stimulus_length + iti_length + T.added_jitter(itrial)*iti_jitter;
+    %Wait until the end of the ITI
+    while ((GetSecs-start)<iti_end); end
+    
     if RTbox_connected
         [bpts,~] = RTBox; % Pull RTBox events and log the last button press
         if ~isempty(bpts)
@@ -194,10 +198,6 @@ for itrial = 1:n_trials
             T.response(itrial) = 1;
         end
     end
-    
-    iti_end = T.onset_time(itrial) + stimulus_length + iti_length + T.added_jitter(itrial)*iti_jitter;
-    %Wait until the end of the ITI
-    while ((GetSecs-start)<iti_end); end
     
     %% Experiment break
     if rem(itrial, round(n_trials/break_frequency)) == 0

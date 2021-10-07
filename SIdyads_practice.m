@@ -6,7 +6,7 @@ function total_accuracy = SIdyads_practice(win, dispSize, threshold, iti_length,
 % dispSize - the rectangle where the stimulus should be presented
 % threshold - the accuracy needed to progress past the practice trials
 % iti_length - the amount of time between stimuli in seconds
-% RTbox_connected - boolean indicating whether the check for responses
+% RTbox_connected - boolean indicating whether to check for responses
 %
 % Outputs:
 % The practice accuracy acheived
@@ -105,7 +105,7 @@ still_loading = 1;
 if RTbox_connected
     RTBox('ClockRatio', 10);
     RTBox('clear',20);
-end 
+end
 
 %% Experiment loop
 total_accuracy = 0;
@@ -156,17 +156,17 @@ while total_accuracy < threshold
         T.duration(itrial) = real_trial_end - trial_start;
         Screen('CloseMovie', movie(itrial));
         
-        if RTbox_connected
-            [~,bps] = RTBox; % Pull RTBox events and log the last button press
-            if ~isempty(bps)
-                T.response(itrial) = 1;
-            end
-        end
-        
         while (GetSecs<iti_end)
             if still_loading && itrial ~= n_trials
                 movie(itrial+1) = Screen('OpenMovie', win, T.movie_path{itrial+1}, async, preloadsecs);
                 if movie(itrial+1) > 0; still_loading = 0; end
+            end
+        end
+        
+        if RTbox_connected
+            [~,bps] = RTBox; % Pull RTBox events and log the last button press
+            if ~isempty(bps)
+                T.response(itrial) = 1;
             end
         end
     end

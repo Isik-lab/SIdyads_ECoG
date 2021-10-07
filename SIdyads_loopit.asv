@@ -2,7 +2,9 @@ function SIdyads_loopit(subj_number, do_practice, RTbox_connected)
 % Presents the social interactions dyads practice trials
 %
 % Inputs:
-% subj_number - an integer identifying the subject
+% win - the window pointer for psychtoolbox
+% dispSize - the rectangle where the stimulus should be presented
+% threshold - the accuracy needed to progress past the practice trials
 % do_practice - boolean indicating whether to run the practice
 % RTbox_connected - boolean indicating whether to check for responses
 %
@@ -10,7 +12,7 @@ function SIdyads_loopit(subj_number, do_practice, RTbox_connected)
 
 if nargin < 1
     subj_number = 77;
-    do_practice = 0;
+    do_practice = 1;
     RTbox_connected = 0;
 end
 
@@ -19,7 +21,7 @@ break_frequency = 2; %There are 275 videos to a run. This value determines
 %how frequently to break up those movies. A value of 2 would lead a
 %break every ~138 videos (275/2).
 iti_length = 1; %time between stimuli in seconds
-threshold = 80; %accuracy threshold for practice to continue.
+threshold = 60; %accuracy threshold for practice to continue.
 %There are five trials, so 80% is missing one trial
 stimulus_size = 1000; %The size of the movie to display in pixels.
 %May need to be adjusted for the size of the screen.
