@@ -10,4 +10,4 @@ This calls the practice code. Random videos are selected to be presented. The pa
 This is the main experiment that presents the stimuli. Breaks are enabled between the long presentation of videos with a frequency determined by the `break_frequency` input parameter. If `RTbox_connected` is set to 1, the code will attempt to connect both to the RTBox and DAQ. 
 
 ## social_dyad_videos_500ms/
-To run the experiment, the "social_dyad_videos_500ms/" directory must be added to the main folder. The directory can be downloaded from this [Google Drive link]  (https://drive.google.com/drive/folders/1-EGqd_Yp0yKg5ooeS0ujAVnPmdAlXAsC?usp=sharing).
+To run the experiment, the "social_dyad_videos_500ms/" directory must be added to the main folder. The directory can be downloaded from this [Google Drive link](https://drive.google.com/drive/folders/1-EGqd_Yp0yKg5ooeS0ujAVnPmdAlXAsC?usp=sharing).
