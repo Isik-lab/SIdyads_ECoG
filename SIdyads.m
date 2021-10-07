@@ -32,8 +32,8 @@ if nargin < 1
     Screen('Preference','SkipSyncTests',1);
 
     % Uncomment for debugging with transparent screen
-    AssertOpenGL;
-    PsychDebugWindowConfiguration;
+%     AssertOpenGL;
+%     PsychDebugWindowConfiguration;
 
     screen = max(Screen('Screens'));
     [win, rect] = Screen('OpenWindow', screen, 0);
@@ -179,7 +179,6 @@ for itrial = 1:n_trials
     %Save end time and close movie
     T.offset_time(itrial) = real_trial_end - start;
     T.duration(itrial) = real_trial_end - start - T.onset_time(itrial);
-    T.duration(itrial)
     Screen('CloseMovie', movie(itrial));
     
     while still_loading && itrial < n_trials
