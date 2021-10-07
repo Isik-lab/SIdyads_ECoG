@@ -69,7 +69,7 @@ if do_practice
     end
     
     %Call practice script
-    accuracy = SIdyads_practice(win, dispSize, threshold, iti_length, RTbox_connected);
+    accuracy = SIdyads_practice(win, dispSize, threshold, iti_length*1.5, RTbox_connected);
     
     %% Wait to begin
     if RTbox_connected
@@ -77,7 +77,7 @@ if do_practice
         RTBox('clear',20);
         bpts = [];
     end
-    start_text = sprintf('Your accuracy for this section is %g%%. \n The practice is now complete. \n Press any button to begin the main experiment', accuracy);
+    start_text = sprintf('Your accuracy for this section is %g%%. \n The practice is now complete. \n The time between videos for the rest of the experiment will be a bit faster. \n Press any button to begin the main experiment', accuracy);
     DrawFormattedText2(start_text,'win',win,'sx','center','sy','center','xalign','center','yalign', 'center','baseColor',[255, 255, 255]);
     Screen('Flip', win);
     if RTbox_connected
